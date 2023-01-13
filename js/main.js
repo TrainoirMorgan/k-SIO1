@@ -35,6 +35,12 @@ buttons.forEach((button) => {
         if(buttonContent === '+' || buttonContent === '-' || buttonContent === '*' || buttonContent === '/'){
             operator = buttonContent;
         }
+        if ((buttonContent === '+' || buttonContent === '-' || buttonContent === '*' || buttonContent === '/') && (operator === '+' || operator === '-' || operator === '*' || operator === '/')) {
+            screen.innerText = eval(`${firstOperand}${operator}${lastOperand}`);
+            firstOperand = eval(`${firstOperand}${operator}${lastOperand}`);
+            lastOperand = "";
+            operator = buttonContent;
+        }
         if(buttonContent === '='){
             screen.innerText = eval(`${firstOperand}${operator}${lastOperand}`);
             firstOperand = eval(`${firstOperand}${operator}${lastOperand}`);
